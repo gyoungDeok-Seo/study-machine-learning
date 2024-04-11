@@ -175,12 +175,20 @@ GridSearchCV
 
 <img src="./b_classifier/images/grid_search_cv.png" width="500px">
 
+#### 편하게 수행할 수 있는 교차 검증
+**cross_val_score(estimator, x, y, cv, scoring)**
+- estimator: classifier 종류 모델이면 내부적으로 startified K-Fold로 진행된다.
+- x: features
+- y: targets
+- cv: 폴드 세트 개수
+- scoring: 평가 함수, 정확도(accuracy)외에 다른 것은 다른 장에서 배운다.
 
+#### GridSearchCV
+**GridSearchCV(estimator, param_grid, cv, refit, return_train_score)**
+- estimator: 학습할 모델 객체 작성
+- param_grid: dict형태로 전달해야 하며, 주요 key값은 max_depth, min_samples_split이다.
+- cv: 폴드 세트 개수
+- refit: 전달한 모델 객체에 최적의 하이퍼 파라미터로 적용하고자 할 때
+- return_train_score: 교차 검증 점수를 가져올 지에 대해 True 또는 False를 전달한다.
 
-
-
-
-
-
-
-
+---
